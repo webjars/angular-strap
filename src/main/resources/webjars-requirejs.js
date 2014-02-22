@@ -1,8 +1,4 @@
-/*global requirejs */
-
-// Ensure any request for this webjar brings in jQuery.
 requirejs.config({
-    shim: {
-        'angular-strap': [ 'webjars!bootstrap.js', 'webjars!angular.js' ]
-    }
+    paths: { "angular-strap": webjars.path("angular-strap", "angular") },
+    shim: { "angular-strap": [ "angular" ] }
 });
