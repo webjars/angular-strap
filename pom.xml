@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angular-strap</artifactId>
-    <version>2.0.3-SNAPSHOT</version>
+    <version>2.0.2-1-SNAPSHOT</version>
     <name>AngularStrap</name>
     <description>WebJar for AngularStrap</description>
     <url>http://webjars.org</url>
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>angularjs</artifactId>
-            <version>1.2.0</version>
+            <version>1.2.16-2</version>
         </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
@@ -59,8 +59,14 @@
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
         <requirejs>
             {
-                paths: { "angular-strap": "angular-strap" },
-                shim: { "angular-strap": [ "angular" ] }
+                "paths": {
+                    "angular-strap": "angular-strap",
+                    "angular-strap-tpl": "angular-strap-tpl",
+                },
+                "shim": {
+                    "angular-strap-tpl": [ "angular-strap" ],
+                    "angular-strap": [ "angular" ]
+                }
             }
         </requirejs>
     </properties>
