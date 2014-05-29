@@ -61,7 +61,7 @@
             {
                 "paths": {
                     "angular-strap": "angular-strap",
-                    "angular-strap-tpl": "angular-strap-tpl",
+                    "angular-strap-tpl": "angular-strap.tpl"
                 },
                 "shim": {
                     "angular-strap-tpl": [ "angular-strap" ],
