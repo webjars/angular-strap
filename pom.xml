@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>angular-strap</artifactId>
-    <version>2.1.5-SNAPSHOT</version>
+    <version>2.2.1-SNAPSHOT</version>
     <name>AngularStrap</name>
     <description>WebJar for AngularStrap</description>
     <url>http://webjars.org</url>
@@ -54,7 +54,7 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>2.1.4</upstream.version>
+        <upstream.version>2.2.1</upstream.version>
         <upstream.url>https://github.com/mgcrea/angular-strap/archive/v${upstream.version}.zip</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstream.version}</destDir>
         <requirejs>
@@ -84,13 +84,13 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="download archive" />
-                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip" />
-                                <echo message="unzip archive" />
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
-                                <echo message="moving resources" />
+                                <echo message="download archive"/>
+                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip"/>
+                                <echo message="unzip archive"/>
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
+                                <echo message="moving resources"/>
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/angular-strap-${upstream.version}/dist" />
+                                    <fileset dir="${project.build.directory}/angular-strap-${upstream.version}/dist"/>
                                 </move>
                             </target>
                         </configuration>
@@ -101,13 +101,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5</version>
+                <version>2.5.1</version>
             </plugin>
 
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.5.1</version>
+                <version>1.6.5</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>sonatype-nexus-staging</serverId>
